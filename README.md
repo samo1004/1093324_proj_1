@@ -8,7 +8,7 @@
   先把一些輸入輸出時的引導字串設定好
   ```asm
       
-	  endl:		.string "\n"#edit
+	endl:	.string "\n"#edit
    	Input:	.string "Input a number: \n"
    	Output:	.string "The damage: \n"
   ```
