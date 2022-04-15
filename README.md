@@ -25,6 +25,22 @@
 	add t1,x0,x0#t1 歸0
 	jal ra,F#第一次call function
   ```
+  F為計算傷害量的recursive function，每次進入F都先將當前的n值儲存起來，然後判斷要跳到哪個Label做判斷
+  ```asm
+  F:
+	addi sp,sp,-8		#空出兩格 #一格-4
+	sw ra,0(sp)		#把return address存起來
+	sw t0,4(sp)		#把n存起來
+	addi t2,zero,0		#t2拿來比較n
+	beq t0,zero,xeq0	#n=0
+	addi t2,zero,1		#t2=1
+	beq t0,t2,xeq1		#n=1
+	addi t2,zero,11		#t2=11
+	blt t0,t2,xb1s11	#n>1 n<=10
+	addi t2,zero,21		#t2=21
+	blt t0,t2,xb10s21	#n>10 n<=20
+	bge t0,t2,xb20		#>20
+  ```
 ## 範例輸入 :
   5\
   10\
