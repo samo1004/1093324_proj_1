@@ -11,7 +11,9 @@
   Input:  .string "Input a number: \n"
   Output:	.string "The damage: \n"
   ```
-  依照題義輸入一個整數n，n的範圍為0~99，將n assign到t0，後續都以t0做運算和比較
+  依照題義輸入一個整數n，n的範圍為0~99，將n assign到t0(後續都以t0做運算和比較)\
+  接著將t1設定為0，當作累積傷害量的變數\
+  進入Function
   ```asm
   la a0,Input     #load Input 到 a0
 	li a7,4         #syscall mode 4 print string
