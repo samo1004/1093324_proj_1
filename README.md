@@ -42,35 +42,35 @@
   各個Label都依照function的條件去做運算，計算完成則跳至Exit，return回main function
   ```asm
   xeq0:	
-	addi t1,t1,1#+1
+	addi t1,t1,1		#+1
 	j Exit
 	
   xeq1:
-	addi t1,t1,5#+5
+	addi t1,t1,5		#+5
 	j Exit
   xb1s11:
-	addi t0,t0,-1#n-1
-	jal ra, F#跳過去做
-	addi t0,t0,-1#n-2
-	jal ra,F#跳過去做
-	j Exit#跳出
+	addi t0,t0,-1		#n-1
+	jal ra, F		#跳過去做
+	addi t0,t0,-1		#n-2
+	jal ra,F		#跳過去做
+	j Exit			#跳出
   xb10s21:
-	addi t0,t0,-2#n-2
+	addi t0,t0,-2		#n-2
 	jal ra,F
-	addi t0,t0,-1#n-3
+	addi t0,t0,-1		#n-3
 	jal ra,F
 	j Exit
   xb20:
-	add t2,zero,t0#先存個n
-	slli t2,t2,1#n*2
-	add t1,t1,t2#+n*2
-	addi t3,zero,5#等等除5
-	div t0,t0,t3#n/5
+	add t2,zero,t0		#先存個n
+	slli t2,t2,1		#n*2
+	add t1,t1,t2		#+n*2
+	addi t3,zero,5		#等等除5
+	div t0,t0,t3		#n/5
 	jal ra,F
 	j Exit
   Exit:
 	lw ra,0(sp)
-	lw t0,4(sp)#把F讀進去的存回來
+	lw t0,4(sp)		#把F讀進去的存回來
 	addi sp,sp,8
 	jalr x0,0(ra)
   ```
