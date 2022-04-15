@@ -70,7 +70,7 @@
 	j Exit
   Exit:
 	lw ra,0(sp)
-	lw t0,4(sp)		#把F讀進去的存回來
+	lw t0,4(sp)		#把存進去的讀回來
 	addi sp,sp,8
 	jalr x0,0(ra)
   ```
