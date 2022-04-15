@@ -74,6 +74,17 @@
 	addi sp,sp,8
 	jalr x0,0(ra)
   ```
+  最後回到main function輸出
+  ```asm
+  	la a0,Output#ra要回來的地方
+	li a7,4#print string
+	ecall
+	mv a0,t1#t1 存ans
+	li a7,1#mode 1  print int
+	ecall
+    	li a7,10
+	ecall
+  ```
 ## 範例輸入 :
   5\
   10\
