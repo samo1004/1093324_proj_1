@@ -5,13 +5,13 @@
   _t1_ : 存最後要輸出的值\
   _t2、t3、t4_ : 存一些拿來比較、運算的值
 ## 程式碼解說 :
-  先把一些輸入輸出時的引導字串設定好
-  ```asm
+先把一些輸入輸出時的引導字串設定好
+```asm
       
-	endl:	.string "\n"#edit
-   	Input:	.string "Input a number: \n"
-   	Output:	.string "The damage: \n"
-  ```
+endl:	.string "\n"#edit
+Input:	.string "Input a number: \n"
+Output:	.string "The damage: \n"
+```
 ## 範例輸入 :
   5\
   10\
