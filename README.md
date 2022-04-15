@@ -23,7 +23,7 @@
 	add t1,x0,x0	#t1 歸0
 	jal ra,F	#第一次call function
   ```
-  F為計算傷害量的recursive function，每次進入F都先將當前的n值和return address儲存起來，然後判斷要跳到哪個Label做判斷
+  F為計算傷害量的recursive function，每次進入F都先將當前的n值和return address儲存起來，然後判斷要跳到哪個Label做計算
   ```asm
   F:
 	addi sp,sp,-8		#空出兩格 #一格-4
