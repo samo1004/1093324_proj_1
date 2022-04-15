@@ -1,9 +1,9 @@
 .globl main
 .data 	
     
-	Endl:		.string "\n"#edit
-   	Input:	.string "Input a number: "
-   	Output:	.string "Output: "
+	endl:		.string "\n"#edit
+   	Input:	.string "Input a number: \n"
+   	Output:	.string "The damage: \n"
 .text
 main:
 
@@ -15,7 +15,7 @@ main:
 	add t0,zero,a0#assign the entering interger to t0
 	
 	add t1,x0,x0#t1 歸0
-	jal ra,F
+	jal ra,F#第一次call function
 	
 	la a0,Output#ra要回來的地方
 	li a7,4#print string
@@ -27,7 +27,7 @@ main:
 	ecall
 F:
 	addi sp,sp,-8#空出兩格 #一格-4
-	sw ra,0#把return address存起來
+	sw ra,0(sp)#把return address存起來
 	sw t0,4(sp)#把n存起來
 	addi t2,zero,0#t2拿來比較n
 	beq t0,zero,xeq0#n=0
@@ -71,3 +71,8 @@ Exit:
 	lw t0,4(sp)#把F讀進去的存回來
 	addi sp,sp,8
 	jalr x0,0(ra)
+
+	
+	
+
+
