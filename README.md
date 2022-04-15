@@ -15,12 +15,12 @@
   接著將t1設定為0，當作累積傷害量的變數\
   進入Function
   ```asm
-  la a0,Input     	#load Input 到 a0
+  la a0,Input       #load Input 到 a0
 	li a7,4         #syscall mode 4 print string
 	ecall           #syscall
 	li a7,5         #syscall mode 5 enter and put in a0
-	ecall           #syscall
-	add t0,zero,a0  #assign the entering interger to t0
+	ecall            #syscall
+	add t0,zero,a0   #assign the entering interger to t0
 	
 	add t1,x0,x0	#t1 歸0
 	jal ra,F	#第一次call function
